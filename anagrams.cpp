@@ -21,12 +21,13 @@ int main(int argc, char *argv[]){
         sort(sortedWord.begin(), sortedWord.end());
         vector<string>& wordVec = wordMap[sortedWord];
         wordVec.push_back(word);
-        if (word.size() >= 4 && wordMap[sortedWord].size()> word.size()){
+        if (word.size() >= 4 && wordMap[sortedWord].size()>= word.size()){
             anagramSet.insert(sortedWord);
         }
 
     }
 
+    // go over qualifying anagrams and print them out
     for (auto it = anagramSet.begin(); it != anagramSet.end(); ++it){
         string curAnagram = *it;
         vector<string>& wordVec = wordMap[curAnagram];
